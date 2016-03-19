@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to root_path , notice: 'メッセージを保存しました'
+      redirect_to root_path , notice: "メッセージを保存しました"
     else
       # メッセージが保存できなかった時
       @messages = Message.all
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   def update
     if @message.update(message_params)
       # 保存に成功した場合はトップページへリダイレクト
-      redirect_to root_path , notice: 'メッセージを編集しました'
+      redirect_to root_path , notice: "メッセージを編集しました"
     else
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
@@ -34,7 +34,7 @@ class MessagesController < ApplicationController
   
   def destroy
     @message.destroy
-    redirect_to root_path, notice: 'メッセージを削除しました'
+    redirect_to root_path, notice: "メッセージを削除しました"
   end
   
   private
